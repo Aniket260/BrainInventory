@@ -1,0 +1,49 @@
+<div style="margin: 20px;"></div>
+<button (click)="back()">< Back</button>
+<div class="row" style="width:100%;height:100%;display: flex;align-items: center;justify-content: center;">
+
+  <div class="col-md-5">
+          <form [formGroup]="productForm" (ngSubmit)="addProduct(productForm.value)">
+              <div>
+                  <div class="row">
+                      <div class="col-md-12 display">
+                          <h4>Add Product</h4>
+                      </div>
+                  </div>
+                  <div>
+                      <div class="form-group display">
+                          <input type="text" formControlName="ProductName" class="form-control" id="ProductName" placeholder="Product Name" name="ProductName" style="width: 60%;">
+                      </div>
+                      <div class="form-group display">
+                        <textarea type="text" formControlName="Description" class="Description" id="Description" placeholder="Description" name="ProductName" style="width: 60%;"></textarea>
+                     </div>
+                      <div class="form-group display">
+                        <input type="number" formControlName="Price" class="form-control" id="Price" placeholder="Price" name="Price" style="width: 60%;">
+                      </div>
+                      <div class="form-group display">
+                        <input type="number" formControlName="Quantity" class="form-control" id="Quantity" placeholder="Quantity" name="Quantity" style="width: 60%;">
+                      </div>
+                      <div class="row" style="padding: 0%;">
+                          <div class="col-md-2" ></div>
+                          <div class="col-md-8 row" style="padding-right: 3%;padding-left: 7%;">
+                              <div class="col-md-8" style="padding: 0%;">
+                                  <!-- <p class="errorText" *ngIf="invalidPassword">Invalid Parameters</p> -->
+                              </div>
+                          </div>
+                          <div class="col-md-2"></div>
+                      </div>
+
+                      <div style="margin-top: 3%;">
+
+                      </div>
+
+                      <div class="form-element display">
+                          <button type="submit" class="btn btn-success" *ngIf="!updateProduct" [disabled]="!productForm.valid">Add Product</button>
+                          <button type="submit" class="btn btn-success" *ngIf="updateProduct" [disabled]="!productForm.valid">Edit Product</button>
+                      </div>
+                  </div>
+              </div>
+          </form>
+  </div>
+
+</div>

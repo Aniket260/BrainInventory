@@ -1,0 +1,33 @@
+<div style="margin: 20px;"></div>
+
+<div class="card" style="text-align: right;min-width: 100%;">
+  <button class="btn btn-primary" (click)="addProduct()">Add Product</button>
+</div>
+<div style="margin: 10px;"></div>
+<div class="card">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Product Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let product of productList">
+        <th>{{product.ProductName}}</th>
+        <th>{{product.Description}}</th>
+        <th>{{product.Price}}</th>
+        <th>{{product.Quantity}}</th>
+        <th>
+          <button class="btn btn-success" (click)="edit(product)">Edit</button>
+          <button class="btn btn-danger" (click)="Delete(product)">Delete</button>
+        </th>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
